@@ -63,5 +63,14 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        //moje pridane:
+        //pre package role:
+        'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+        'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+        'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        //moje vlastné úplne: 
+        'is_selected_company' => \App\Http\Middleware\IsSelectedCompany::class,
+        'set_to_bo' => \App\Http\Middleware\SetToBO::class,
+        'set_to_fo' => \App\Http\Middleware\SetToFO::class,
     ];
 }
